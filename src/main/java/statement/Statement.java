@@ -5,10 +5,18 @@ import java.util.List;
 
 public class Statement {
 
-    List<Row> rows;
+    List<Row> rows = new ArrayList<>();
 
-    private Statement(List<Row> rows) {
+    public Statement(List<Row> rows) {
         this.rows = rows;
+    }
+
+    public Statement() {
+
+    }
+
+    public void add(Row row) {
+        rows.add(row);
     }
 
     public static class Builder {

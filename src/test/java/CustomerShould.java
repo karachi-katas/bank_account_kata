@@ -12,7 +12,7 @@ public class CustomerShould {
     public void beAbleToDepositMoney() {
 
         BankAccount bankAccount = new BankAccount();
-        bankAccount.deposit(1000, LocalDate.parse("2015-02-20"));
+        bankAccount.deposit(10.0, LocalDate.parse("2015-02-20"));
         Statement actualStatement = bankAccount.getStatement();
 
         Statement expectedStatement = new Statement.Builder()
