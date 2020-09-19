@@ -24,4 +24,23 @@ public class Statement {
             return new Statement(rows);
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Statement statement = (Statement) o;
+
+        return rows.equals(statement.rows);
+    }
+
+    @Override
+    public int hashCode() {
+        return rows.hashCode();
+    }
 }
