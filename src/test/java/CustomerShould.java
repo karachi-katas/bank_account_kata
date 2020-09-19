@@ -1,7 +1,10 @@
 import static org.junit.Assert.assertEquals;
+import static statement.Row.row;
+import static statement.TransactionType.DEBIT;
 
 import java.time.LocalDate;
 import org.junit.Test;
+import statement.Statement;
 
 public class CustomerShould {
 
@@ -13,11 +16,9 @@ public class CustomerShould {
         Statement actualStatement = bankAccount.getStatement();
 
         Statement expectedStatement = new Statement.Builder()
-                .withTransaction(new Transaction(10.0, TransactionType.DEBIT,
-                        LocalDate.parse("2015-02-20")))
+                .with(row(10.0, DEBIT, LocalDate.parse("2015-02-20"), 10.0))
                 .build();
 
         assertEquals(expectedStatement, actualStatement);
-
     }
 }
